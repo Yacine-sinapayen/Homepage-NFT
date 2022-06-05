@@ -1,29 +1,92 @@
 @import 'scss/reset';
 @import 'scss/base';
 
-body {
-  padding: 32px;
+// Je créais une var linear-gradient que je vais réutiliser à plusieurs reprises
+$linear-gradient: linear-gradient(90deg, rgba(219,111,38,1) 0%, rgba(209,156,27,1) 18%, rgba(111,87,189,1) 64%, rgba(188,25,240,1) 87%, rgba(54,5,69,1) 100%);
+
+
+body{
+  background: black;
+  color: white;
+  font-family: Montserrat;
+  font-weight: bold;
 }
 
-.hero {
+.container{
+  max-width: 1200px;
+  padding: 0 24px;
+  margin: auto;
   height: 100%;
-  background: antiquewhite;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
 
-  h1 {
-    font-size: calc(54vw * 100 / 1440);
-    margin-bottom: calc(12vw * 100 / 1440);
-  }
-
-  p {
-    font-size: calc(24vw * 100 / 1440);
+  .logo{
+    display: flex;
+    align-items: center;
+    span{
+      margin-right: 8px;
+      border-radius: 50px;
+      display: block;
+      height: 30px;
+      width: 30px;
+      background: $linear-gradient;
+    }
   }
 }
 
-a {
-  text-decoration: underline;
+nav{
+  position: sticky;
+  top: 0;
+  height: 100px;
+  // background: blue;
+
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    ul{
+      display: flex;
+      align-items: center;
+      // écart entre les éléments 
+      gap: 20px;
+    }
+
+    // Gestion du la search-bar
+    .search-bar{
+      display:flex;
+      align-items:center;
+      height: 30px;
+      
+      
+      // Gestion du dégradé du border de la search-bar
+      position: relative;
+      border: 4px solid transparent;
+      border-radius: 30px;
+      background: black;
+      // La propriété background-clip définit la façon dont l'arrière-plan d'un élément (que ce soit l'image ou la couleur) s'étend sous la boîte de bordure, la boîte de remplissage (padding) ou la boîte de contenu.
+      // avec la valeur padding-box : Aucun arrière-plan n'est dessiné dans la boîte de bordure. L'arrière-plan s'étend jusqu'à la limite de la boîte de remplissage (padding).
+      background-clip: padding-box;
+      padding: 10px;
+
+      &:after{
+        content: "";
+        position: absolute;
+        inset: -2px;
+        display: block;
+        z-index: -1;
+        background: $linear-gradient;
+        border-radius: 30px;
+      }
+
+      ::placeholder{
+        color: white;
+        opacity: .7;
+        font-weight: 500;
+      }
+
+      input{
+        padding: 12px;
+      }
+    }
+  }
+
 }
