@@ -29,7 +29,7 @@ nav {
   position: sticky;
   top: 0;
   height: 100px;
-  // background: blue;
+  background: black;
   margin-bottom: 64px;
 
   .container {
@@ -41,13 +41,19 @@ nav {
     .logo {
       display: flex;
       align-items: center;
-      span {
-        margin-right: 8px;
-        border-radius: 50px;
-        display: block;
-        height: 30px;
-        width: 30px;
-        background: $linear-gradient;
+      // Span rond remplacé par un logo
+      // span {
+      //   margin-right: 8px;
+      //   border-radius: 50px;
+      //   display: block;
+      //   height: 30px;
+      //   width: 30px;
+      //   background: $linear-gradient;
+      // }
+
+      img{
+        height: 64px;
+        width: 64px;
       }
     }
 
@@ -98,10 +104,10 @@ nav {
 }
 
 .hero {
-  margin-bottom: 64px;
   .container {
     display: flex;
-    align-items: center;
+    // Mon contenu de gauche est trop bas donc je supprime cette class. Mais de manière globale c'est une bonne pratique de l'insérer
+    // align-items: center;
     justify-content: space-between;
 
     > .left {
@@ -110,7 +116,7 @@ nav {
       h1 {
         font-size: 64px;
         font-weight: 900;
-        margin-bottom: 32px;
+        margin-bottom: 82px;
 
         span {
           -webkit-background-clip: text;
@@ -124,23 +130,27 @@ nav {
       .ctas {
         display: flex;
         gap: 24px;
-        margin-bottom: 32px;
+        margin-bottom: 82px;
       }
       .figures {
         display: flex;
-        align-items: center;
         justify-content: center;
-
+        align-items: center;
         li {
           display: flex;
           flex-direction: column;
           flex-grow: 1;
           border-right: 2px solid white;
-          align-items: center;
           text-align: left;
-
+          width: 100px;
+          
+          // je ne cible que le 2 et 3 eme elements car je veux que le premier reste aligné à gauche avec le reste du container. 
+          &:nth-child(2n){
+            align-items: center;
+          }
           &:last-child {
             border: none;
+            align-items: center;
           }
 
           strong {
@@ -253,7 +263,6 @@ nav {
 
 .achievement {
   height: 100px;
-  background: red;
   .container {
     display: flex;
     align-items: center;
@@ -274,5 +283,9 @@ nav {
       justify-content: center;
       display: flex;
     }
+    img{
+       height: 64px;
+       width: 64px;
+     }
   }
 }
