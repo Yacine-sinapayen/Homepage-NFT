@@ -14,7 +14,7 @@ $linear-gradient: linear-gradient(
 body {
   background: black;
   color: white;
-  font-family: "Montserrat, sans-serif";
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
 }
 
@@ -22,15 +22,14 @@ body {
   max-width: 1280px;
   padding: 0 24px;
   margin: auto;
-  height: 100%;
 }
 
 nav {
   position: sticky;
   top: 0;
   height: 100px;
-  background: black;
   margin-bottom: 64px;
+
 
   .container {
     display: flex;
@@ -81,7 +80,7 @@ nav {
       padding: 10px;
 
       &:after {
-        content: "";
+        content: '';
         position: absolute;
         inset: -2px;
         display: block;
@@ -104,10 +103,11 @@ nav {
 }
 
 .hero {
+  margin-bottom: 64px;
   .container {
     display: flex;
     // Mon contenu de gauche est trop bas donc je supprime cette class. Mais de manière globale c'est une bonne pratique de l'insérer
-    // align-items: center;
+    align-items: center;
     justify-content: space-between;
 
     > .left {
@@ -116,7 +116,7 @@ nav {
       h1 {
         font-size: 64px;
         font-weight: 900;
-        margin-bottom: 82px;
+        margin-bottom: 32px;
 
         span {
           -webkit-background-clip: text;
@@ -130,12 +130,13 @@ nav {
       .ctas {
         display: flex;
         gap: 24px;
-        margin-bottom: 82px;
+        margin-bottom: 32px;
       }
       .figures {
         display: flex;
         justify-content: center;
         align-items: center;
+
         li {
           display: flex;
           flex-direction: column;
@@ -166,12 +167,16 @@ nav {
       flex: 1;
       height: 100%;
       width: 100%;
+      display: flex;
+      position: relative;
+
       .perso-wrapper {
         height: 100%;
         width: 100%;
         position: relative;
+
         &:after {
-          content: "";
+          content: '';
           display: block;
           width: 100%;
           aspect-ratio: 1;
@@ -196,7 +201,7 @@ nav {
       // Gestion de l'onglet stats dans la partie de droite
       .stats {
         position: absolute;
-        top: 20%;
+        top: 50%;
         right: 0;
         background: rgba(white, 0.3);
         padding: 10px;
@@ -207,11 +212,12 @@ nav {
         > div {
           display: flex;
           flex-direction: column;
-          flex-direction: column;
 
           span {
-            font-size: 0.8em;
+            font-size: .8em;
             margin-bottom: 8px;
+            font-weight: 400;
+
           }
           strong {
             margin-bottom: 12px;
@@ -223,7 +229,7 @@ nav {
 }
 
 .btn {
-  height: 40px;
+  height: 48px;
   padding: 0 24px;
   display: inline-flex;
   align-items: center;
@@ -262,7 +268,6 @@ nav {
 }
 
 .achievement {
-  height: 100px;
   .container {
     display: flex;
     align-items: center;
@@ -274,15 +279,16 @@ nav {
     align-items: center;
     gap: 24px;
 
-    > .left {
-      background: $linear-gradient;
-      border-radius: 50%;
-      width:64px;
-      height:64px;
-      align-items: center;
-      justify-content: center;
-      display: flex;
-    }
+    // icône remplaçé par l'image
+    // > .left {
+    //   background: $linear-gradient;
+    //   border-radius: 50%;
+    //   width:64px;
+    //   height:64px;
+    //   align-items: center;
+    //   justify-content: center;
+    //   display: flex;
+    // }
     img{
        height: 64px;
        width: 64px;
